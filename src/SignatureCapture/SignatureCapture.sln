@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignatureCapture", "SignatureCapture\SignatureCapture.csproj", "{1C058F7F-6A94-4BCA-99E1-A9130D238284}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignatureCapture.Demo", "SignatureCapture.Demo\SignatureCapture.Demo.csproj", "{0FA63666-A89D-48CB-8D6F-B2A69399E03C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+		Release|iPhone = Release|iPhone
+		Ad-Hoc|iPhone = Ad-Hoc|iPhone
+		AppStore|iPhone = AppStore|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0FA63666-A89D-48CB-8D6F-B2A69399E03C}.Ad-Hoc|iPhone.ActiveCfg = Ad-Hoc|iPhone
+		{0FA63666-A89D-48CB-8D6F-B2A69399E03C}.Ad-Hoc|iPhone.Build.0 = Ad-Hoc|iPhone
+		{0FA63666-A89D-48CB-8D6F-B2A69399E03C}.AppStore|iPhone.ActiveCfg = AppStore|iPhone
+		{0FA63666-A89D-48CB-8D6F-B2A69399E03C}.AppStore|iPhone.Build.0 = AppStore|iPhone
+		{0FA63666-A89D-48CB-8D6F-B2A69399E03C}.Debug|Any CPU.ActiveCfg = Debug|iPhoneSimulator
+		{0FA63666-A89D-48CB-8D6F-B2A69399E03C}.Debug|Any CPU.Build.0 = Debug|iPhoneSimulator
+		{0FA63666-A89D-48CB-8D6F-B2A69399E03C}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{0FA63666-A89D-48CB-8D6F-B2A69399E03C}.Debug|iPhone.Build.0 = Debug|iPhone
+		{0FA63666-A89D-48CB-8D6F-B2A69399E03C}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{0FA63666-A89D-48CB-8D6F-B2A69399E03C}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{0FA63666-A89D-48CB-8D6F-B2A69399E03C}.Release|Any CPU.ActiveCfg = Release|iPhoneSimulator
+		{0FA63666-A89D-48CB-8D6F-B2A69399E03C}.Release|Any CPU.Build.0 = Release|iPhoneSimulator
+		{0FA63666-A89D-48CB-8D6F-B2A69399E03C}.Release|iPhone.ActiveCfg = Release|iPhone
+		{0FA63666-A89D-48CB-8D6F-B2A69399E03C}.Release|iPhone.Build.0 = Release|iPhone
+		{0FA63666-A89D-48CB-8D6F-B2A69399E03C}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{0FA63666-A89D-48CB-8D6F-B2A69399E03C}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{1C058F7F-6A94-4BCA-99E1-A9130D238284}.Ad-Hoc|iPhone.ActiveCfg = Debug|Any CPU
+		{1C058F7F-6A94-4BCA-99E1-A9130D238284}.Ad-Hoc|iPhone.Build.0 = Debug|Any CPU
+		{1C058F7F-6A94-4BCA-99E1-A9130D238284}.AppStore|iPhone.ActiveCfg = Debug|Any CPU
+		{1C058F7F-6A94-4BCA-99E1-A9130D238284}.AppStore|iPhone.Build.0 = Debug|Any CPU
+		{1C058F7F-6A94-4BCA-99E1-A9130D238284}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C058F7F-6A94-4BCA-99E1-A9130D238284}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C058F7F-6A94-4BCA-99E1-A9130D238284}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{1C058F7F-6A94-4BCA-99E1-A9130D238284}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{1C058F7F-6A94-4BCA-99E1-A9130D238284}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{1C058F7F-6A94-4BCA-99E1-A9130D238284}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{1C058F7F-6A94-4BCA-99E1-A9130D238284}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C058F7F-6A94-4BCA-99E1-A9130D238284}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C058F7F-6A94-4BCA-99E1-A9130D238284}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{1C058F7F-6A94-4BCA-99E1-A9130D238284}.Release|iPhone.Build.0 = Release|Any CPU
+		{1C058F7F-6A94-4BCA-99E1-A9130D238284}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{1C058F7F-6A94-4BCA-99E1-A9130D238284}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = SignatureCapture.Demo\SignatureCapture.Demo.csproj
+	EndGlobalSection
+EndGlobal
