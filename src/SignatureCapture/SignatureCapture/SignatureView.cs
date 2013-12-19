@@ -2,11 +2,13 @@ using System;
 using MonoTouch.UIKit;
 using System.Drawing;
 using MonoTouch.Foundation;
+using MonoTouch.CoreAnimation;
 
 namespace SignatureCapture
 {
 	public class SignatureView : UIView
-	{       
+	{
+		NSObject notiObserver = null;
 		private UIBezierPath path;
 		private UIImage signatureImage;
 		private PointF[] points = new PointF[5];
@@ -14,6 +16,7 @@ namespace SignatureCapture
 		private int _strokeWidth = 2;
 		private UIColor _strokeColor = UIColor.Black;
 		private UIColor _backgroundColor = UIColor.White;
+		private UIColor _textColor = UIColor.Black;
 
 		public int StrokeWidth
 		{
@@ -47,6 +50,15 @@ namespace SignatureCapture
 			}
 		}
 
+		public UIColor TextColor
+		{
+			get { return _textColor; }
+			set 
+			{ 
+				_textColor = value;
+			}
+		}
+
 		public event EventHandler SignatureChanged;
 		private void OnSignatureChanged()
 		{
@@ -58,8 +70,86 @@ namespace SignatureCapture
 		{
 			this.MultipleTouchEnabled = false;
 			this.BackgroundColor = UIColor.White;
+			this.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleTopMargin | UIViewAutoresizing.FlexibleBottomMargin;
 			path = new UIBezierPath();
 			path.LineWidth = this.StrokeWidth;
+			SetSize ();
+			CreateUIElements ();
+			SubscribeToNotifications ();
+		}
+
+		private void SetSize()
+		{
+			var frame = this.Frame;
+
+			if (frame.X == 0)
+				frame.X = 3;
+
+			if (frame.Width == UIScreen.MainScreen.ApplicationFrame.Width)
+				frame.Width -= 6;
+			else
+				frame.Width -= 3;
+
+			this.Frame = frame;
+		}
+
+		private void SubscribeToNotifications()
+		{
+			lineLabel.AddObserver (this, new NSString ("frame"), NSKeyValueObservingOptions.New, IntPtr.Zero);
+		}
+
+		public override void ObserveValue (NSString keyPath, NSObject ofObject, NSDictionary change, IntPtr context)
+		{
+			AddBottomBorder (lineLabel);
+		}
+
+		private UILabel xlabel;
+		private UILabel lineLabel;
+		private UILabel signHereLabel;
+
+		private void CreateUIElements()
+		{
+			xlabel = new UILabel (new RectangleF (10, this.Frame.Height - 32, 10, 15));
+			xlabel.BackgroundColor = UIColor.Clear;
+			xlabel.Font = UIFont.SystemFontOfSize (12);
+			xlabel.Text = "X";
+			this.AddSubview (xlabel);
+
+			lineLabel = new UILabel (new RectangleF (10, this.Frame.Height - 22, this.Frame.Width - 20, 5));
+			lineLabel.BackgroundColor = UIColor.Clear;
+			lineLabel.AutoresizingMask = UIViewAutoresizing.FlexibleRightMargin | UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleTopMargin | UIViewAutoresizing.FlexibleBottomMargin;
+			AddBottomBorder (lineLabel);
+			this.AddSubview (lineLabel);
+
+			float controlWidth = 75;
+			signHereLabel = new UILabel (new RectangleF (GetMiddleOfFrame(controlWidth), this.Frame.Height - 15, controlWidth, 15));
+			signHereLabel.BackgroundColor = UIColor.Clear;
+			signHereLabel.Text = "Sign here";
+			signHereLabel.Font = UIFont.SystemFontOfSize (12);
+			signHereLabel.AutoresizingMask = UIViewAutoresizing.FlexibleLeftMargin | UIViewAutoresizing.FlexibleRightMargin;
+			this.AddSubview (signHereLabel);
+		}
+
+		private void AddBottomBorder(UILabel label)
+		{
+			var layer = label.Layer;
+			var bottomBorder = new CALayer ();
+			bottomBorder.BorderColor = this.TextColor.CGColor;
+			bottomBorder.BorderWidth = 1;
+			bottomBorder.Frame = new RectangleF (-1, layer.Frame.Size.Height - 1, layer.Frame.Size.Width, 1);
+			layer.AddSublayer (bottomBorder);
+		}
+
+		private float GetMiddleOfFrame(float widthOfControl)
+		{
+			var middleOfFrame = this.Frame.Width / 2;
+			var middleOfControl = widthOfControl / 2;
+			return middleOfFrame - middleOfControl;
+		}
+
+		private void SetUIElementsColor()
+		{
+			xlabel.TextColor = this.TextColor;
 		}
 
 		public bool IsSignatureEmpty()
