@@ -43,9 +43,14 @@ namespace SignatureCapture.Demo
 				ClearButton = null;
 			}
 
-			if (SignatureView != null) {
-				SignatureView.Dispose ();
-				SignatureView = null;
+			if (SetBackgroundColorButton != null) {
+				SetBackgroundColorButton.Dispose ();
+				SetBackgroundColorButton = null;
+			}
+
+			if (SetShadowColorButton != null) {
+				SetShadowColorButton.Dispose ();
+				SetShadowColorButton = null;
 			}
 
 			if (SetStrokeColorButton != null) {
@@ -58,11 +63,6 @@ namespace SignatureCapture.Demo
 				SetStrokeWidthButton = null;
 			}
 
-			if (SetBackgroundColorButton != null) {
-				SetBackgroundColorButton.Dispose ();
-				SetBackgroundColorButton = null;
-			}
-
 			if (SetTextColorButton != null) {
 				SetTextColorButton.Dispose ();
 				SetTextColorButton = null;
@@ -73,9 +73,9 @@ namespace SignatureCapture.Demo
 				ShowShadowButton = null;
 			}
 
-			if (SetShadowColorButton != null) {
-				SetShadowColorButton.Dispose ();
-				SetShadowColorButton = null;
+			if (SignatureView != null) {
+				SignatureView.Dispose ();
+				SignatureView = null;
 			}
 		}
 	}

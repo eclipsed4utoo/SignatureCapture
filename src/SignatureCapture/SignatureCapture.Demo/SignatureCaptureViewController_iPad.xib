@@ -8,6 +8,12 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignatureCaptureViewController">
             <connections>
                 <outlet property="ClearButton" destination="cBo-wx-weH" id="mWf-uf-hNe"/>
+                <outlet property="SetBackgroundColorButton" destination="Pdc-cQ-TKD" id="4aG-my-YHd"/>
+                <outlet property="SetShadowColorButton" destination="vGY-de-SUO" id="D9J-Ds-l7B"/>
+                <outlet property="SetStrokeColorButton" destination="tNV-2b-8JE" id="Uhl-Kn-WKW"/>
+                <outlet property="SetStrokeWidthButton" destination="jQc-RX-KzA" id="j8e-oH-MDF"/>
+                <outlet property="SetTextColorButton" destination="IVV-Mb-SzI" id="Ta9-oW-WuH"/>
+                <outlet property="ShowShadowButton" destination="QAT-GA-LL7" id="KQi-cZ-6my"/>
                 <outlet property="SignatureView" destination="U7M-Qt-ztm" id="eVo-3Y-t0K"/>
                 <outlet property="view" destination="2" id="3"/>
             </connections>
@@ -18,15 +24,57 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view hidden="YES" contentMode="scaleToFill" id="U7M-Qt-ztm">
-                    <rect key="frame" x="0.0" y="318" width="768" height="281"/>
+                    <rect key="frame" x="0.0" y="445" width="768" height="281"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="cBo-wx-weH">
-                    <rect key="frame" x="260" y="632" width="248" height="74"/>
+                    <rect key="frame" x="260" y="759" width="248" height="74"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                     <state key="normal" title="Clear">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="tNV-2b-8JE">
+                    <rect key="frame" x="134" y="20" width="513" height="44"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Set Stroke Color To Red">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="jQc-RX-KzA">
+                    <rect key="frame" x="134" y="71" width="513" height="44"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Set Stroke Width to 10">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Pdc-cQ-TKD">
+                    <rect key="frame" x="134" y="122" width="513" height="44"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Set View Background to Black">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="IVV-Mb-SzI">
+                    <rect key="frame" x="134" y="173" width="513" height="44"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Set Text Color To Blue">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="QAT-GA-LL7">
+                    <rect key="frame" x="134" y="224" width="513" height="44"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Show Shadow">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vGY-de-SUO">
+                    <rect key="frame" x="134" y="275" width="513" height="44"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Set Shadow Color To Green">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
