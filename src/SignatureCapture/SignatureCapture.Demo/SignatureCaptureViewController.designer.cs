@@ -16,6 +16,24 @@ namespace SignatureCapture.Demo
 		MonoTouch.UIKit.UIButton ClearButton { get; set; }
 
 		[Outlet]
+		MonoTouch.UIKit.UIButton SetBackgroundColorButton { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UIButton SetShadowColorButton { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UIButton SetStrokeColorButton { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UIButton SetStrokeWidthButton { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UIButton SetTextColorButton { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UIButton ShowShadowButton { get; set; }
+
+		[Outlet]
 		MonoTouch.UIKit.UIView SignatureView { get; set; }
 		
 		void ReleaseDesignerOutlets ()
@@ -28,6 +46,36 @@ namespace SignatureCapture.Demo
 			if (SignatureView != null) {
 				SignatureView.Dispose ();
 				SignatureView = null;
+			}
+
+			if (SetStrokeColorButton != null) {
+				SetStrokeColorButton.Dispose ();
+				SetStrokeColorButton = null;
+			}
+
+			if (SetStrokeWidthButton != null) {
+				SetStrokeWidthButton.Dispose ();
+				SetStrokeWidthButton = null;
+			}
+
+			if (SetBackgroundColorButton != null) {
+				SetBackgroundColorButton.Dispose ();
+				SetBackgroundColorButton = null;
+			}
+
+			if (SetTextColorButton != null) {
+				SetTextColorButton.Dispose ();
+				SetTextColorButton = null;
+			}
+
+			if (ShowShadowButton != null) {
+				ShowShadowButton.Dispose ();
+				ShowShadowButton = null;
+			}
+
+			if (SetShadowColorButton != null) {
+				SetShadowColorButton.Dispose ();
+				SetShadowColorButton = null;
 			}
 		}
 	}
