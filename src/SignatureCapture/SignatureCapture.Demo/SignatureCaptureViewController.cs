@@ -20,7 +20,7 @@ namespace SignatureCapture.Demo
 		{
 			base.ViewDidLoad ();
 			
-			var signature = new SignatureView (this.SignatureView.Frame);
+			var signature = new UISignatureView (this.SignatureView.Frame);
 			signature.StrokeWidth = 2;
 			signature.BackgroundColor = UIColor.Gray;
 

@@ -6,7 +6,7 @@ using MonoTouch.CoreAnimation;
 
 namespace SignatureCapture
 {
-	public class SignatureView : UIView
+	public class UISignatureView : UIView
 	{
 		private UIBezierPath path;
 		private UIImage signatureImage;
@@ -88,7 +88,7 @@ namespace SignatureCapture
 				SignatureChanged (this, EventArgs.Empty);
 		}
 
-		public SignatureView (RectangleF rect): base(rect)
+		public UISignatureView (RectangleF rect): base(rect)
 		{
 			this.MultipleTouchEnabled = false;
 			this.BackgroundColor = UIColor.White;
