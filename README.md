@@ -1,4 +1,4 @@
-SignatureCapture
+Signature Capture
 ================
 
 Signature Capture Library for Xamarin.iOS
@@ -8,7 +8,7 @@ Signature Capture Library for Xamarin.iOS
 
     public override void ViewDidLoad()
     {
-       var signature = new SignatureView(new RectangeF(0, 40, UIScreen.MainScreen.ApplicationFrame.Width, 200));
+       var signature = new UISignatureView(new RectangeF(0, 40, UIScreen.MainScreen.ApplicationFrame.Width, 200));
        this.View.AddSubview(signature);
     }
 
