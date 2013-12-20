@@ -8,7 +8,6 @@ namespace SignatureCapture
 {
 	public class SignatureView : UIView
 	{
-		NSObject notiObserver = null;
 		private UIBezierPath path;
 		private UIImage signatureImage;
 		private PointF[] points = new PointF[5];
@@ -17,6 +16,28 @@ namespace SignatureCapture
 		private UIColor _strokeColor = UIColor.Black;
 		private UIColor _backgroundColor = UIColor.White;
 		private UIColor _textColor = UIColor.Black;
+		private bool _showShadow = true;
+		private UIColor _shadowColor = UIColor.Black;
+
+		public UIColor ShadowColor
+		{
+			get { return _shadowColor; }
+			set
+			{
+				_shadowColor = value;
+				SetShadow ();
+			}
+		}
+
+		public bool ShowShadow 
+		{
+			get { return _showShadow; }
+			set 
+			{ 
+				_showShadow = value; 
+				SetShadow ();
+			}
+		}
 
 		public int StrokeWidth
 		{
@@ -46,7 +67,7 @@ namespace SignatureCapture
 			set 
 			{ 
 				_backgroundColor = value; 
-				this.BackgroundColor = _backgroundColor;
+				InvokeOnMainThread (() => this.BackgroundColor = _backgroundColor);
 			}
 		}
 
@@ -56,6 +77,7 @@ namespace SignatureCapture
 			set 
 			{ 
 				_textColor = value;
+				SetUIElementsColor ();
 			}
 		}
 
@@ -74,8 +96,27 @@ namespace SignatureCapture
 			path = new UIBezierPath();
 			path.LineWidth = this.StrokeWidth;
 			SetSize ();
+			SetShadow ();
 			CreateUIElements ();
 			SubscribeToNotifications ();
+		}
+
+		public void SetShadow ()
+		{
+			CALayer layer = this.Layer;
+
+			if (!this.ShowShadow)
+			{
+				layer.MasksToBounds = true;
+				layer.ShadowPath = UIBezierPath.FromRect(RectangleF.Empty).CGPath;
+				return;
+			}
+
+			layer.MasksToBounds = false;
+			layer.ShadowColor = this.ShadowColor.CGColor;
+			layer.ShadowOpacity = 1.0f;
+			layer.ShadowOffset = new SizeF(3.0f, 3.0f);
+			layer.ShadowPath = UIBezierPath.FromRect(this.Bounds).CGPath;
 		}
 
 		private void SetSize()
@@ -83,12 +124,14 @@ namespace SignatureCapture
 			var frame = this.Frame;
 
 			if (frame.X == 0)
-				frame.X = 3;
+			{
+				frame.X = 6;
 
-			if (frame.Width == UIScreen.MainScreen.ApplicationFrame.Width)
-				frame.Width -= 6;
-			else
-				frame.Width -= 3;
+				if (frame.Width == UIScreen.MainScreen.ApplicationFrame.Width)
+					frame.Width -= 12;
+				else
+					frame.Width -= 9;
+			}	
 
 			this.Frame = frame;
 		}
@@ -101,6 +144,7 @@ namespace SignatureCapture
 		public override void ObserveValue (NSString keyPath, NSObject ofObject, NSDictionary change, IntPtr context)
 		{
 			AddBottomBorder (lineLabel);
+			SetShadow ();
 		}
 
 		private UILabel xlabel;
@@ -150,6 +194,8 @@ namespace SignatureCapture
 		private void SetUIElementsColor()
 		{
 			xlabel.TextColor = this.TextColor;
+			signHereLabel.TextColor = this.TextColor;
+			AddBottomBorder (lineLabel);
 		}
 
 		public bool IsSignatureEmpty()
