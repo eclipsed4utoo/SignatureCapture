@@ -41,6 +41,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <Compile Include="SignatureView.cs" />
+    <Compile Include="UISignatureView.cs" />
   </ItemGroup>
 </Project>
