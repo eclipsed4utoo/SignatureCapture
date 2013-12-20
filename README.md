@@ -19,6 +19,8 @@ Signature Capture Library for Xamarin.iOS
 `StrokeColor` - Allows the setting of the color of the signature line. Defaults to Black  
 `TextColor` - Allows the setting of the text color of the UI elements. Defaults to Black  
 `ViewBackgroundColor` - Allows the setting of the background color of the signature capture pad. Same as setting `BackgroundColor` on the view. Defaults to White  
+`ShowShadow` - Determines whether to show a shadow around the signature view. Defaults to true  
+`ShadowColor` - Allows the setting of the shadow color.
 
 
 ### License
