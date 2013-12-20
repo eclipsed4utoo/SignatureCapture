@@ -35,15 +35,15 @@ namespace SignatureCapture.Demo
 			// shows/hides shadow
 			this.ShowShadowButton.TouchUpInside += (object sender, EventArgs e) => 
 			{
-				if (this.ShowShadowButton.CurrentTitle.Contains("Show"))
+				if (this.ShowShadowButton.CurrentTitle.Contains("Hide"))
 				{
 					signature.ShowShadow = false;
-					SetButtonText(this.ShowShadowButton, "Hide Shadow");
+					SetButtonText(this.ShowShadowButton, "Show Shadow");
 				}
 				else
 				{
 					signature.ShowShadow = true;
-					SetButtonText(this.ShowShadowButton, "Show Shadow");
+					SetButtonText(this.ShowShadowButton, "Hide Shadow");
 				}
 			};
 
