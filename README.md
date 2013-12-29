@@ -1,7 +1,7 @@
 Signature Capture
 ================
 
-Signature Capture Library for Xamarin.iOS
+Signature Capture Library for Xamarin.iOS (MonoTouch)
 
 ### Simple Usage
 
